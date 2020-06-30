@@ -1,5 +1,3 @@
-All examples from Terraform Training
-
 ## CONFIGURING GIT FOR THE FIRST TIME
 
 1- Open a terminal/shell and type:
