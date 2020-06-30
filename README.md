@@ -2,9 +2,9 @@
 
 1- Open a terminal/shell and type:
 
-    > $ git config --global user.name "Your name here"
-    > $ git config --global user.email "your_email@example.com"
-    > $ git config --global color.ui true
+> $ git config --global user.name "Your name here"
+> $ git config --global user.email "your_email@example.com"
+> $ git config --global color.ui true
 
 2- Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
 
