@@ -2,9 +2,9 @@
 
 1- Open a terminal/shell and type:
 
-    $ git config --global user.name "Your name here"
-    $ git config --global user.email "your_email@example.com"
-    $ git config --global color.ui true
+    > $ git config --global user.name "Your name here"
+    > $ git config --global user.email "your_email@example.com"
+    > $ git config --global color.ui true
 
 2- Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
 
@@ -40,8 +40,7 @@ To grab a complete copy of another user's repository, use git clone like this:
 
     SSH:    $ git clone git@github.com:USERNAME/REPOSITORY.git
 
-You can choose from several different URLs when cloning a repository. While logged in to GitHub, these URLs are available below the repository details.
-
+You can choose from several different URLs when cloning a repository. While logged in to GitHub, these URLs are available below the repository details:
 ![Repository details](https://help.github.com/assets/images/help/repository/remotes-url.png)
 
 When you run git clone, the following actions occur:
