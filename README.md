@@ -1,6 +1,6 @@
 All examples from Terraform Training
 
-CONFIGURING GIT FOR THE FIRST TIME
+## CONFIGURING GIT FOR THE FIRST TIME
 
 1- Open a terminal/shell and type:
 
@@ -34,7 +34,7 @@ If not, create such public/private keys: Open a terminal/shell and type:
     
         Hi username! You've successfully authenticated, but Github does not provide shell access.
 
-CLONE REPO FROM GITHUB
+## CLONE REPO FROM GITHUB
 
 To grab a complete copy of another user's repository, use git clone like this:
     
@@ -56,7 +56,7 @@ When you run git clone, the following actions occur:
 
     - The default branch (usually called master) is checked out
 
-FETCHING CHANGES FROM A REMOTE REPOSITORY
+## FETCHING CHANGES FROM A REMOTE REPOSITORY
 
 Use git fetch to retrieve new work done by other people. Fetching from a repository grabs all the new remote-tracking branches and tags without merging those changes into your own branches.
 
@@ -64,7 +64,7 @@ If you already have a local repository with a remote URL set up for the desired 
 
     $ git fetch remotename
 
-MERGING CHANGES INTO YOUR LOCAL BRANCH
+## MERGING CHANGES INTO YOUR LOCAL BRANCH
 
 Merging combines your local changes with changes made by others.
 
@@ -72,7 +72,7 @@ Typically, you'd merge a remote-tracking branch (i.e., a branch fetched from a r
 
     $ git merge remotename/branchname
 
-PULLING CHANGES FROM A REMOTE REPOSITORY
+## PULLING CHANGES FROM A REMOTE REPOSITORY
 
 git pull is a convenient shortcut for completing both git fetch and git merge in the same command:
 
