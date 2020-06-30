@@ -1,4 +1,9 @@
-Markdown examples: https://guides.github.com/features/mastering-markdown/
+# Markdown examples: https://guides.github.com/features/mastering-markdown/
+## Markdown examples: https://guides.github.com/features/mastering-markdown/
+### Markdown examples: https://guides.github.com/features/mastering-markdown/
+#### Markdown examples: https://guides.github.com/features/mastering-markdown/
+##### Markdown examples: https://guides.github.com/features/mastering-markdown/
+###### Markdown examples: https://guides.github.com/features/mastering-markdown/
 
 ## CONFIGURING GIT FOR THE FIRST TIME
 
@@ -19,14 +24,14 @@ If not, create such public/private keys: Open a terminal/shell and type:
 4- Paste your ssh public key into your github account settings.
 
     1. Go to your github Account Settings
-    1. Click “SSH Keys” on the left.
-    1. Click “Add SSH Key” on the right.
-    1. Add a label (like “My laptop”) and paste the public key into the big text box.
-    1. In a terminal/shell, type the following to test it:
+    2. Click “SSH Keys” on the left.
+    3. Click “Add SSH Key” on the right.
+    4. Add a label (like “My laptop”) and paste the public key into the big text box.
+    5. In a terminal/shell, type the following to test it:
     
         $ ssh -T git@github.com
         
-    1. If it says something like the following, it worked:
+    6. If it says something like the following, it worked:
     
         Hi username! You've successfully authenticated, but Github does not provide shell access.
 
@@ -43,15 +48,11 @@ You can choose from several different URLs when cloning a repository. While logg
 
 When you run git clone, the following actions occur:
 
-    - A new folder called repo is made
-
-    - It is initialized as a Git repository
-
-    - A remote named origin is created, pointing to the URL you cloned from
-
-    - All of the repository's files and commits are downloaded there
-
-    - The default branch (usually called master) is checked out
+    * A new folder called repo is made
+    * It is initialized as a Git repository
+    * A remote named origin is created, pointing to the URL you cloned from
+    * All of the repository's files and commits are downloaded there
+    * The default branch (usually called master) is checked out
 
 ## FETCHING CHANGES FROM A REMOTE REPOSITORY
 
