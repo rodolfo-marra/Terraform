@@ -42,6 +42,8 @@ To grab a complete copy of another user's repository, use git clone like this:
 
 You can choose from several different URLs when cloning a repository. While logged in to GitHub, these URLs are available below the repository details.
 
+![Repository details](https://help.github.com/assets/images/help/repository/remotes-url.png)
+
 When you run git clone, the following actions occur:
 
     - A new folder called repo is made
