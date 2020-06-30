@@ -34,6 +34,46 @@ If not, create such public/private keys: Open a terminal/shell and type:
     
         Hi username! You've successfully authenticated, but Github does not provide shell access.
 
-CLONING REPO FROM GITHUB
+CLONE REPO FROM GITHUB
 
-1- 
+To grab a complete copy of another user's repository, use git clone like this:
+
+    $ git clone https://github.com/USERNAME/REPOSITORY.git
+
+You can choose from several different URLs when cloning a repository. While logged in to GitHub, these URLs are available below the repository details.
+
+When you run git clone, the following actions occur:
+
+    A new folder called repo is made
+
+    It is initialized as a Git repository
+
+    A remote named origin is created, pointing to the URL you cloned from
+
+    All of the repository's files and commits are downloaded there
+
+    The default branch (usually called master) is checked out
+
+FETCHING CHANGES FROM A REMOTE REPOSITORY
+
+Use git fetch to retrieve new work done by other people. Fetching from a repository grabs all the new remote-tracking branches and tags without merging those changes into your own branches.
+
+If you already have a local repository with a remote URL set up for the desired project, you can grab all the new information by using git fetch *remotename* in the terminal:
+
+    $ git fetch remotename
+
+MERGING CHANGES INTO YOUR LOCAL BRANCH
+
+Merging combines your local changes with changes made by others.
+
+Typically, you'd merge a remote-tracking branch (i.e., a branch fetched from a remote repository) with your local branch:
+
+    $ git merge remotename/branchname
+
+PULLING CHANGES FROM A REMOTE REPOSITORY
+
+git pull is a convenient shortcut for completing both git fetch and git merge in the same command:
+
+    git pull remotename branchname
+
+Because pull performs a merge on the retrieved changes, you should ensure that your local work is committed before running the pull command. If you run into a merge conflict you cannot resolve, or if you decide to quit the merge, you can use git merge --abort to take the branch back to where it was in before you pulled.
