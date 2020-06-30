@@ -1,6 +1,7 @@
 All examples from Terraform Training
 
-Configuring Git for the first time
+CONFIGURING GIT FOR THE FIRST TIME
+
 1- Open a terminal/shell and type:
     $ git config --global user.name "Your name here"
     $ git config --global user.email "your_email@example.com"
@@ -21,3 +22,8 @@ If not, create such public/private keys: Open a terminal/shell and type:
         $ ssh -T git@github.com
     If it says something like the following, it worked:
         Hi username! You've successfully authenticated, but Github does not provide shell access.
+
+
+CLONING REPO FROM GITHUB
+
+1- 
