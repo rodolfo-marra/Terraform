@@ -37,22 +37,24 @@ If not, create such public/private keys: Open a terminal/shell and type:
 CLONE REPO FROM GITHUB
 
 To grab a complete copy of another user's repository, use git clone like this:
+    
+    HTTPS:  $ git clone https://github.com/USERNAME/REPOSITORY.git
 
-    $ git clone https://github.com/USERNAME/REPOSITORY.git
+    SSH:    $ git clone git@github.com:USERNAME/REPOSITORY.git
 
 You can choose from several different URLs when cloning a repository. While logged in to GitHub, these URLs are available below the repository details.
 
 When you run git clone, the following actions occur:
 
-    A new folder called repo is made
+    - A new folder called repo is made
 
-    It is initialized as a Git repository
+    - It is initialized as a Git repository
 
-    A remote named origin is created, pointing to the URL you cloned from
+    - A remote named origin is created, pointing to the URL you cloned from
 
-    All of the repository's files and commits are downloaded there
+    - All of the repository's files and commits are downloaded there
 
-    The default branch (usually called master) is checked out
+    - The default branch (usually called master) is checked out
 
 FETCHING CHANGES FROM A REMOTE REPOSITORY
 
