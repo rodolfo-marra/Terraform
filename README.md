@@ -6,7 +6,8 @@
 #### [MERGING CHANGES INTO YOUR LOCAL BRANCH](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#merging-changes-into-your-local-branch-1)
 #### [PULLING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#pulling-changes-from-a-remote-repository-1)
 #### [CREATE LOCAL REPO AND PUSH TO REMOTE](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#create-local-repo-and-push-to-remote-1)
-##### Markdown examples: https://guides.github.com/features/mastering-markdown/
+##### Markdown examples I: https://guides.github.com/features/mastering-markdown/
+##### Markdown examples II:https://docs.github.com/pt/github/writing-on-github/basic-writing-and-formatting-syntax
 
 ---
 
