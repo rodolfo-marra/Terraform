@@ -103,11 +103,9 @@ Because pull performs a merge on the retrieved changes, you should ensure that y
 4. Add the files in your new local repository. This stages them for the first commit.
     
     >$ git add .
-    
     >_Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'._
     
     >$ git diff --cached --name-only --diff-filter=A
-    
     >_List the added files which are not yet committed _
     
 5. Commit the files that you've staged in your local repository.
@@ -119,15 +117,12 @@ Because pull performs a merge on the retrieved changes, you should ensure that y
 7. In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
     
     > $ git remote add origin https://github.com/USERNAME/REPOSITORY.git
-    
     > _Sets the new remote_
     
     > $ git remote -v
-    
     > _Verifies the new remote URL_
     
 8. Push the changes in your local repository to GitHub.
     
     > $ git push origin master
-    
     > _Pushes the changes in your local repository up to the remote repository you specified as the origin_
