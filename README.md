@@ -13,17 +13,17 @@
 ### CONFIGURING GIT FOR THE FIRST TIME
 
 1. Open a terminal/shell and type:
-
-    $ git config --global user.name "Your name here"
-    $ git config --global user.email "your_email@example.com"
-    $ git config --global color.ui true
-
+```
+$ git config --global user.name "Your name here"
+$ git config --global user.email "your_email@example.com"
+$ git config --global color.ui true
+```
 1. Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
 
 If not, create such public/private keys: Open a terminal/shell and type:
-
-    $ ssh-keygen -t rsa -C "your_email@example.com"
-
+```
+$ ssh-keygen -t rsa -C "your_email@example.com"
+```
 1. Copy your public key (the contents of the newly-created id_rsa.pub file) into your clipboard.
 
 1. Paste your ssh public key into your github account settings.
@@ -33,21 +33,20 @@ If not, create such public/private keys: Open a terminal/shell and type:
     3. Click “Add SSH Key” on the right.
     4. Add a label (like “My laptop”) and paste the public key into the big text box.
     5. In a terminal/shell, type the following to test it:
-    
-        $ ssh -T git@github.com
-        
+    ```
+    $ ssh -T git@github.com
+    ```    
     6. If it says something like the following, it worked:
-    
-        Hi username! You've successfully authenticated, but Github does not provide shell access.
-
+    ```
+    Hi username! You've successfully authenticated, but Github does not provide shell access.
+    ```
 ### CLONE REPO FROM GITHUB
 
 To grab a complete copy of another user's repository, use git clone like this:
-    
-    HTTPS:  $ git clone https://github.com/USERNAME/REPOSITORY.git
-
-    SSH:    $ git clone git@github.com:USERNAME/REPOSITORY.git
-
+``` 
+HTTPS:  $ git clone https://github.com/USERNAME/REPOSITORY.git
+SSH:    $ git clone git@github.com:USERNAME/REPOSITORY.git
+```
 You can choose from several different URLs when cloning a repository. While logged in to GitHub, these URLs are available below the repository details:
 ![Repository details](https://help.github.com/assets/images/help/repository/remotes-url.png)
 
@@ -62,11 +61,10 @@ When you run git clone, the following actions occur:
 ### CHANGE GIT AUTHENTICATION (HTTPS/SSH)
 
 If you have cloned using HTTPS and want to use SSH (or vice-versa) you can run this command:
-
-    SSH -> HTTPS: git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
-
-    HTTPS -> SSH: git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
-
+```
+SSH -> HTTPS: git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+HTTPS -> SSH: git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+```
 *NOTE: VSCode works if your are using HTTPS authentication. When using SSH get error message Auth denied*
 
 ### FETCHING CHANGES FROM A REMOTE REPOSITORY
@@ -74,23 +72,23 @@ If you have cloned using HTTPS and want to use SSH (or vice-versa) you can run t
 Use git fetch to retrieve new work done by other people. Fetching from a repository grabs all the new remote-tracking branches and tags without merging those changes into your own branches.
 
 If you already have a local repository with a remote URL set up for the desired project, you can grab all the new information by using git fetch *remotename* in the terminal:
-
-    $ git fetch remotename
-
+```
+$ git fetch remotename
+```
 ### MERGING CHANGES INTO YOUR LOCAL BRANCH
 
 Merging combines your local changes with changes made by others.
 
 Typically, you'd merge a remote-tracking branch (i.e., a branch fetched from a remote repository) with your local branch:
-
-    $ git merge remotename/branchname
-
+```
+$ git merge remotename/branchname
+```
 ### PULLING CHANGES FROM A REMOTE REPOSITORY
 
 git pull is a convenient shortcut for completing both git fetch and git merge in the same command:
-
-    $ git pull remotename branchname
-
+```
+$ git pull remotename branchname
+```
 Because pull performs a merge on the retrieved changes, you should ensure that your local work is committed before running the pull command. If you run into a merge conflict you cannot resolve, or if you decide to quit the merge, you can use git merge --abort to take the branch back to where it was in before you pulled.
 
 ### CREATE LOCAL REPO AND PUSH TO REMOTE
@@ -98,9 +96,9 @@ Because pull performs a merge on the retrieved changes, you should ensure that y
 1. Open Git Bash.
 2. Change the current working directory to your local project.
 3. Initialize the local directory as a Git repository.
-    
-    >$ git init
-    
+```    
+$ git init
+```   
 4. Add the files in your new local repository. This stages them for the first commit.
     
     >$ git add .
