@@ -1,5 +1,5 @@
 ## Summary
-#### [CONFIGURING GIT FOR THE FIRST TIME](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#configuring-git-for-the-first-time)
+#### [CONFIGURING GIT FOR THE FIRST TIME](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#configuring-git-for-the-first-time-1)
 #### [CLONE REPO FROM GITHUB](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#clone-repo-from-github)
 #### [CHANGE GIT AUTHENTICATION (HTTPS/SSH)](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#change-git-authentication-httpsssh)
 #### [FETCHING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#fetching-changes-from-a-remote-repository)
