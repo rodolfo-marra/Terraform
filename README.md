@@ -1,11 +1,11 @@
 ## Summary
 #### [CONFIGURING GIT FOR THE FIRST TIME](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#configuring-git-for-the-first-time-1)
-#### [CLONE REPO FROM GITHUB](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#clone-repo-from-github)
-#### [CHANGE GIT AUTHENTICATION (HTTPS/SSH)](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#change-git-authentication-httpsssh)
-#### [FETCHING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#fetching-changes-from-a-remote-repository)
-#### [MERGING CHANGES INTO YOUR LOCAL BRANCH](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#merging-changes-into-your-local-branch)
-#### [PULLING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#pulling-changes-from-a-remote-repository)
-#### [CREATE LOCAL REPO AND PUSH TO REMOTE](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#create-local-repo-and-push-to-remote)
+#### [CLONE REPO FROM GITHUB](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#clone-repo-from-github-1)
+#### [CHANGE GIT AUTHENTICATION (HTTPS/SSH)](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#change-git-authentication-httpsssh-1)
+#### [FETCHING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#fetching-changes-from-a-remote-repository-1)
+#### [MERGING CHANGES INTO YOUR LOCAL BRANCH](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#merging-changes-into-your-local-branch-1)
+#### [PULLING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#pulling-changes-from-a-remote-repository-1)
+#### [CREATE LOCAL REPO AND PUSH TO REMOTE](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#create-local-repo-and-push-to-remote-1)
 ##### Markdown examples: https://guides.github.com/features/mastering-markdown/
 
 ---
