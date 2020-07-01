@@ -1,4 +1,4 @@
-##Summary
+## Summary
 ### [CONFIGURING GIT FOR THE FIRST TIME](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#configuring-git-for-the-first-time)
 ### [CLONE REPO FROM GITHUB](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#clone-repo-from-github)
 ### [CHANGE GIT AUTHENTICATION (HTTPS/SSH)](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#change-git-authentication-httpsssh)
@@ -88,7 +88,7 @@ Typically, you'd merge a remote-tracking branch (i.e., a branch fetched from a r
 
 git pull is a convenient shortcut for completing both git fetch and git merge in the same command:
 
-    git pull remotename branchname
+    $ git pull remotename branchname
 
 Because pull performs a merge on the retrieved changes, you should ensure that your local work is committed before running the pull command. If you run into a merge conflict you cannot resolve, or if you decide to quit the merge, you can use git merge --abort to take the branch back to where it was in before you pulled.
 
@@ -98,31 +98,36 @@ Because pull performs a merge on the retrieved changes, you should ensure that y
 2. Change the current working directory to your local project.
 3. Initialize the local directory as a Git repository.
     
-    $ git init
+    >$ git init
     
 4. Add the files in your new local repository. This stages them for the first commit.
     
-    $ git add .
-    _Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'._
+    >$ git add .
     
-    $ git diff --cached --name-only --diff-filter=A
-    _List the added files which are not yet committed _
+    >_Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'._
+    
+    >$ git diff --cached --name-only --diff-filter=A
+    
+    >_List the added files which are not yet committed _
     
 5. Commit the files that you've staged in your local repository.
     
-    $ git commit -m "First commit"
-    _Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again._
+    > $ git commit -m "First commit"
+    > _Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again._
     
 6. At the top of your GitHub repository's Quick Setup page, click to copy the remote repository URL.
 7. In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
     
-    $ git remote add origin https://github.com/USERNAME/REPOSITORY.git
-    _Sets the new remote_
+    > $ git remote add origin https://github.com/USERNAME/REPOSITORY.git
     
-    $ git remote -v
-    _Verifies the new remote URL_
+    > _Sets the new remote_
+    
+    > $ git remote -v
+    
+    > _Verifies the new remote URL_
     
 8. Push the changes in your local repository to GitHub.
     
-    $ git push origin master
-    _Pushes the changes in your local repository up to the remote repository you specified as the origin_
+    > $ git push origin master
+    
+    > _Pushes the changes in your local repository up to the remote repository you specified as the origin_
