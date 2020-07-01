@@ -1,31 +1,32 @@
 ## Summary
-### [CONFIGURING GIT FOR THE FIRST TIME](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#configuring-git-for-the-first-time)
-### [CLONE REPO FROM GITHUB](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#clone-repo-from-github)
-### [CHANGE GIT AUTHENTICATION (HTTPS/SSH)](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#change-git-authentication-httpsssh)
-### [FETCHING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#fetching-changes-from-a-remote-repository)
-### [MERGING CHANGES INTO YOUR LOCAL BRANCH](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#merging-changes-into-your-local-branch)
-### [PULLING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#pulling-changes-from-a-remote-repository)
-### [CREATE LOCAL REPO AND PUSH TO REMOTE](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#create-local-repo-and-push-to-remote)
+#### [CONFIGURING GIT FOR THE FIRST TIME](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#configuring-git-for-the-first-time)
+#### [CLONE REPO FROM GITHUB](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#clone-repo-from-github)
+#### [CHANGE GIT AUTHENTICATION (HTTPS/SSH)](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#change-git-authentication-httpsssh)
+#### [FETCHING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#fetching-changes-from-a-remote-repository)
+#### [MERGING CHANGES INTO YOUR LOCAL BRANCH](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#merging-changes-into-your-local-branch)
+#### [PULLING CHANGES FROM A REMOTE REPOSITORY](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#pulling-changes-from-a-remote-repository)
+#### [CREATE LOCAL REPO AND PUSH TO REMOTE](https://github.com/rodolfo-marra/Terraform/blob/master/README.md#create-local-repo-and-push-to-remote)
+##### Markdown examples: https://guides.github.com/features/mastering-markdown/
 
-###### Markdown examples: https://guides.github.com/features/mastering-markdown/
+---
 
 ### CONFIGURING GIT FOR THE FIRST TIME
 
-1- Open a terminal/shell and type:
+1. Open a terminal/shell and type:
 
     $ git config --global user.name "Your name here"
     $ git config --global user.email "your_email@example.com"
     $ git config --global color.ui true
 
-2- Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
+1. Look to see if you have files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub.
 
 If not, create such public/private keys: Open a terminal/shell and type:
 
     $ ssh-keygen -t rsa -C "your_email@example.com"
 
-3- Copy your public key (the contents of the newly-created id_rsa.pub file) into your clipboard.
+1. Copy your public key (the contents of the newly-created id_rsa.pub file) into your clipboard.
 
-4- Paste your ssh public key into your github account settings.
+1. Paste your ssh public key into your github account settings.
 
     1. Go to your github Account Settings
     2. Click “SSH Keys” on the left.
