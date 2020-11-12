@@ -1,0 +1,3 @@
+resource "aws_sqs_queue" "ignored" {
+  name = "rody_queue3"
+}

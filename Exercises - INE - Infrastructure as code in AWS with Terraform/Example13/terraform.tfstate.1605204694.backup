@@ -1,0 +1,39 @@
+{
+  "version": 4,
+  "terraform_version": "0.13.5",
+  "serial": 1,
+  "lineage": "05d2cfbf-d7dd-3aa1-b2bb-7777cdacca33",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_sqs_queue",
+      "name": "queue",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:sqs:us-east-1:667084926673:rody_queue",
+            "content_based_deduplication": false,
+            "delay_seconds": 0,
+            "fifo_queue": false,
+            "id": "https://sqs.us-east-1.amazonaws.com/667084926673/rody_queue",
+            "kms_data_key_reuse_period_seconds": 300,
+            "kms_master_key_id": "",
+            "max_message_size": 262144,
+            "message_retention_seconds": 345600,
+            "name": "rody_queue",
+            "name_prefix": null,
+            "policy": "{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::667084926673:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:667084926673:rody_queue\"}]}",
+            "receive_wait_time_seconds": 0,
+            "redrive_policy": "",
+            "tags": {},
+            "visibility_timeout_seconds": 30
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    }
+  ]
+}

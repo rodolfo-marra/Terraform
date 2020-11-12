@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "us-east-1"
 }
 
 variable "tag_map" {
-  type = "map"
+  type = map
   default = {
     dev	  = "dev-queue",
     test  = "test-queue",
@@ -16,9 +16,9 @@ variable "env_type" {}
 variable "queue_name" {}
 
 resource "aws_sqs_queue" "queue" {
-  name = "${var.queue_name}"
+  name = var.queue_name
 
-  tags {
-    environment_type = "${lookup(var.tag_map, var.env_type)}"
+  tags = {
+    environment_type = lookup(var.tag_map, var.env_type)
   }
 }
