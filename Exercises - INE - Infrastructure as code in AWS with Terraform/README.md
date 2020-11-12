@@ -2,22 +2,33 @@
 
 ### MODULE - 01 INTRODUCTION
 Use same project for deploy on different cloud providers (resources on AWS and Azure).
+
 Plan before applying changes (what if) – not possible with AWS Cloudformation.
 
 ### MODULE - 01 CONFIGURING TERRAFORM WITH AWS
 Create AWS account (Free tier).
+
 Create TerraformUser on IAM Users with full access.
+
 Install Terraform (https://www.terraform.io/) and configure System variables.
+
 Create System Variable for AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 
 ### MODULE - 02 CREATING AN AWS RESOURCE WITH TERRAFORM
 Code samples: https://github.com/kevholditch/terraform-course-examples
+
 Sample code to create S3 bucket
+
 Go to sample code folder (main.tf file) and Terraform init (Example01)
+
 Terraform plan
+
 Terraform apply
+
     Created S3 bucket rodolfomarra-myfirst-bucket on us-east-1
+
 Terraform destroy
+
     Deleted S3 bucket rodolfomarra-myfirst-bucket on us-east-1
 
 ### MODULE - 02 TERRAFORM RESOURCES
