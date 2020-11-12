@@ -33,29 +33,43 @@ Terraform destroy
 
 ### MODULE - 02 TERRAFORM RESOURCES
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
 Resources have arguments: required and optional
+
 Resources could have Exported Attributes (ie. ARN returned after having created S3 bucket)
+
 Interpolation Syntax: replace information generated after creating AWS object (ie. pass ARN from S3 Bucket to IAM Role).
+
 Interpolation syntax format:
+```
 “${<resource_type>.<resource_name>.<exported_attribute>}”
+```
 Example:
 ```
-    resource “aws_s3_bucket” “my_bucket” {
-    bucket = “rodolfomarra-myfirst-bucket”
-    }
+resource “aws_s3_bucket” “my_bucket” {
+bucket = “rodolfomarra-myfirst-bucket”
+}
 ```
 Reference using: “$(aws_s3_bucket.my_bucket.arn}”
+
 Data types for resources attributes:
+
 	Int – defined using – port = 21
 	String – defined using – host = “localhost”
 	List – defined using – security_groups = [“abc”,”def”]
 	Bool – defined using – enabled = false
+
 Sample code to create S3 bucket and IAM Policy to list Bucket (Example02)
+
 Go to sample code folder (main.tf file) and Terraform init
+
 Terraform apply
+
     Created S3 bucket rodolfomarra-myfirst-bucket on us-east-1
     Created IAM Policy my-bucket-policy on us-east-1
+
 Terraform destroy
+
     Deleted S3 bucket rodolfomarra-myfirst-bucket on us-east-1
     Deleted IAM Policy my-bucket-policy on us-east-1
 
