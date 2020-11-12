@@ -117,11 +117,11 @@ locals {
 Example of multiples locals:
 ```
 locals {
-	   bucket_name_prefix = “rody-”
-	}
+	bucket_name_prefix = “rody-”
+}
 locals {
-	   default_instance_tag = “my-instance”
-	}
+	default_instance_tag = “my-instance”
+}
 ```
 To reference locals you need to use the interpolation syntax:
 
@@ -141,10 +141,10 @@ To reference bucket_name_prefix, you will need to use:
 Locals values can be combined to make more local values, example:
 ```
 locals {
-   first = “rody”
-	   last = “marra”
-	   name = “$(local.first}-${local.last}”
-	}
+	first = “rody”
+	last = “marra”
+	name = “$(local.first}-${local.last}”
+}
 ```
 The result of local.name will be “rody-marra”.
 Locals can be a value of exported attribute, example:
@@ -219,11 +219,11 @@ https://registry.terraform.io/providers/hashicorp/template/latest/docs
 To replace some value (ie."${bucket_arn}") inside some TF template files (ie. policy.json) you need to use:
 ```
 data "template_file" "bucket_policy" {
-  template = "${file("policy.json")}"
+	template = "${file("policy.json")}"
 
-  vars {
-    bucket_arn = "${aws_s3_bucket.my_bucket.arn}"
-  }
+	vars {
+	bucket_arn = "${aws_s3_bucket.my_bucket.arn}"
+	}
 }
 ```
 Every line on policy.json that is "${bucket_arn}" will be replaced by S3 Bucket ARN.
@@ -260,23 +260,23 @@ Allow to manage resources on multiples clouds (or multiple regions of same cloud
 You can specify the region and also access_key and secret_key when you define a provider (but is not recommended because it will be available on code), example:
 ```
 provider "aws" {
-   region = "ca-central-1"
-   alias = "canada"
-   access_key = “AAAAA”
-   secret_key = “aASdasg”
+	region = "ca-central-1"
+	alias = "canada"
+	access_key = “AAAAA”
+	secret_key = “aASdasg”
 }
 ```
 We can pin a provider to certain version or add version requirements for a provider, example:
 ```
 provider "aws" {
-   region = "ca-central-1"
-   alias = "canada"
-   version = “1.8”
+	region = "ca-central-1"
+	alias = "canada"
+	version = “1.8”
 }
 provider "aws" {
-   region = "ca-central-1"
-   alias = "canada"
-   version = “~> 1.8”
+	region = "ca-central-1"
+	alias = "canada"
+	version = “~> 1.8”
 }
 ```
 https://www.terraform.io/docs/configuration/providers.html
@@ -286,8 +286,8 @@ If we don’t specify a provider on resource creation, default provider will be 
 To specify another provider for specific resources, need to use: <provider>.<alias>
 ```
 resource aws_s3_bucket "canada_bucket" {
-   bucket   = "rodolfomarra-canada"
-   provider = "aws.canada"
+	bucket   = "rodolfomarra-canada"
+	provider = "aws.canada"
 }
 ```
 Sample code to create S3 bucket using default provider and another provider (Example07)
@@ -347,15 +347,15 @@ Usage: sometimes we cannot store secret, password, access_key externally from so
 
 To set the value of a variable, you can use:
 
-	Command line:
+	*Command line:*
 		variable “my_name” {}
 		terraform apply --var my_name=kevin
 
-	Environment variable:
+	*Environment variable:*
 		variable “my_name” {}
 		env TF_VAR_my_name=kevin terraform apply
 
-	Using a file:
+	*Using a file:*
 		Create .tfvars file with “variable = value”
 
 Sample code to create SQS queue using environment variable (Example08)
@@ -394,10 +394,15 @@ Terraform destroy
     Deleted SQS Queue from_file on us-east-1 tagged with prod-queue
 
 Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
+
     1-	Environment variables
+
     2-	The terraform.tfvars file, if present.
+
     3-	The terraform.tfvars.json file, if present.
+
     4-	Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
+
     5-	Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
 
 ### MODULE - 02 PROJECT LAYOUT
@@ -439,6 +444,7 @@ resource “aws_iam_user_policy” “my_bucket_policy” {
 	name = “my-bucket-policy”
 	user = “Rodolfo-Marra”
 	policy = “${file(“${path.module}”/policy.json”)}”
+}
 ```
 To reference an output from a module, we need to use: ${module.<module_identifier>.<output_name>}
 ```
@@ -513,59 +519,91 @@ By default terraform store state locally in file “terraform.tfstate”
 To view terraform state need to run: terraform state list
 We can have remote state to be able to share with team. To configure remote state, we need:
 ```
-	terraform {
-	   backend “s3”{
-	      bucket = “terraform-state-bucket”
-	      key = “project.state”
-	      region = “us-east-1”
-	   }
+terraform {
+	backend “s3”{
+		bucket = “terraform-state-bucket”
+		key = “project.state”
+		region = “us-east-1”
 	}
+}
 ```
 Sample code to create one S3 bucket (example12a and example12b)
+
 Created S3 Bucket “rodolfomarra-terraform-state” on us-east-1 manually
+
 Go to sample code folder (Example12a - main.tf and state.tf file) and Terraform init
+
 Terraform apply
+
 	Created “rodolfomarra-example” on us-east-1 and stored tfstate file on S3 “rodolfomarra-terraform-state”
+
 Go to sample code folder (Example12b - main.tf and state.tf file) and Terraform init
+
 Terraform destroy
+
 	Deleted “rodolfomarra-example” on us-east-1 and stored tfstate file on S3 “rodolfomarra-terraform-state”
+
 Deleted “rodolfomarra-terraform-state” on us-east-1 manually
 
 ### MODULE - 04 MANAGING TERRAFORM STATE
 We can add/import and remove resources from TF state. That means TF will manage or not manage these resources
+
 Steps to add an existing resource into TF project
+
 	Create a resource in TF project
 	Import resource into TF state
 	Run TF plan to check if TF doesn’t want to change the resource
+
 In general, the cmd to import resource is: terraform import <resource_path>.<id>
+
 To remove resource is: terraform state rm <resource_path>.<id>
+
 Created SQS queue “rody_queue” on us-east-1 manually
+
 Go to sample code folder (Example13 - main.tf) and Terraform init
+
 Terraform plan
+
 	Add SQS queue
+
 Terraform state list
+
 	No state file found
+
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue#import
+
 Terraform import aws_sqs_queue.queue https://sqs.us-east-1.amazonaws.com/667084926673/rody_queue
+
 Terraform plan
+
 	No changes
+
 Terraform state rm aws_sqs_queue.queue
+
 	Removed aws_sqs_queue.queue
+
 Deleted SQS queue “rody_queue” on us-east-1 manually
 
 ### MODULE - 02 TERRAFORM WORKSPACES
 Create multiple instances a single project using WF workspaces (dev, staging and production)
+
 You need to be using one of state backends:
+
 	AzureRM
-Consul
-GCS
-Local (default)
+	Consul
+	GCS
+	Local (default)
 	Manta
 	S3
+
 To create a new TF workspace: terraform workspace new <name>
+
 To list TF workspace: terraform workspace list
+
 To switch TF workspace: terraform workspace select <name>
+
 To delete TF workspace: terraform workspace delete <name>
+
 To reference to workspace name, need to use: ${terraform.workspace}
 ```
     resource "aws_instance" "web" {
@@ -578,31 +616,48 @@ To reference to workspace name, need to use: ${terraform.workspace}
     }
 ```
 Go to sample code folder (Example14 - main.tf) and Terraform init
+
 Terraform apply
+
 	Created EC2 instance using AMI "ami-00eb20669e0990cb4" with type “t2.micro” tagged “WebServer-default”
 	Created EBS Block device
 	Created EBS Root Block device
 	Created Network interface
+
 Terraform workspace list
+
 	* default
+
 Terraform workspace new qa
+
 Terraform workspace list
-	   default
+
+	default
 	* qa
+
 Terraform apply
+
 	Created EC2 instance using AMI "ami-00eb20669e0990cb4" with type “t2.micro” tagged “WebServer-qa”
 	Created EBS Block device
 	Created EBS Root Block device
 	Created Network interface
+
 Terraform workspace select qa
+
 Terraform destroy
+
 Deleted EC2 instance using AMI "ami-00eb20669e0990cb4" with type “t2.micro” tagged “WebServer-qa”
+
 	Deleted EBS Block device
 	Deleted EBS Root Block device
 	Deleted Network interface
+
 Terraform workspace select default
+
 Terraform workspace delete qa
+
 Terraform destroy
+
 	Deleted EC2 instance using AMI "ami-00eb20669e0990cb4" with type “t2.micro” tagged “WebServer-default”
 	Deleted EBS Block device
 	Deleted EBS Root Block device
@@ -610,23 +665,27 @@ Terraform destroy
 
 ### MODULE - 03 RESOURCE META PARAMETERS
 All TF resources have 4 parameters defined:
+
 	count
 	depends_on
 	provider
 	lifecycle
+
 Count: tell TF how many of resource to create. Example:
 ```
-	resource “aws_instance” “web” {
-	   ami = “data.aws_ami.image.id
-	   instance_type = “t2.micro”
-	   count = 3
-	}
+resource “aws_instance” “web” {
+	ami = “data.aws_ami.image.id
+	instance_type = “t2.micro”
+	count = 3
+}
 ```
 There are some resources that count doesn’t works (ie. S3 bucket – because the name is unique). To get around, need to use ${count.index} on unique parameters. For example:
+```
 resource “aws_s3_bucket” “bucket” {
-   bucket = “rodolfomarra-${count.index}”
-	   count = 2
-	}
+   	bucket = “rodolfomarra-${count.index}”
+	count = 2
+}
+```
 You can specify count = 0 to not create a resource under certain conditions (ie. don’t create db backup for dev environment).
 Depends_on: allows to specify which resource depends on another resource.
 ```
@@ -635,30 +694,38 @@ Depends_on: allows to specify which resource depends on another resource.
         depends_on = [“aws_s3_bucket.bucket”]
     }
 ```
-	When you use interpolation syntax, TF will create dependencies automatically.
+When you use interpolation syntax, TF will create dependencies automatically.
+
 Provider: allows to specify which cloud provider will be used to create resources.
 ```
-	provider “aws” {
-	   region = “ca-central-1”
-	   alias = “canada”
-	}
+provider “aws” {
+	region = “ca-central-1”
+	alias = “canada”
+}
 resource “aws_s3_bucket” “bucket” {
-   bucket = “rodolfomarra-bucket”
-   provider = “aws.canada”
+	bucket = “rodolfomarra-bucket”
+	provider = “aws.canada”
 }
 ```
 Lifecycle: change the way TF updates, destroys, or changes resource.
+
 	create_before_destroy – create new DNS record before removing old one
 	prevent_destroy – extra safety guard to prevent destruction of resource
 	ignore_changes -
+
 Go to sample code folder (Example15 - main.tf) and Terraform init
+
 Terraform apply
+
 	Created S3 bucket “rodolfomarra-1” in “us-east-1”
 	Created S3 bucket “rodolfomarra-2” in “us-east-1”
 	Created S3 bucket “rodolfomarra-3” in “us-east-1”
 	Created S3 bucket “rodolfomarra-next-bucket” in “us-east-1”
+
 Terraform destroy
+
 Deleted S3 bucket “rodolfomarra-1” in “us-east-1”
+
 	Deleted S3 bucket “rodolfomarra-2” in “us-east-1”
 	Deleted S3 bucket “rodolfomarra-3” in “us-east-1”
 	Deleted S3 bucket “rodolfomarra-next-bucket” in “us-east-1”
